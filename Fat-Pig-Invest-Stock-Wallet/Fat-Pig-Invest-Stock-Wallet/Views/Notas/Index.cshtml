@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Fat_Pig_Invest_Stock_Wallet.Models.Nota>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Corretora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroNota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataPregao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecoUnitario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emolumentos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Corretagem)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Corretora.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroNota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataPregao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecoUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emolumentos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Corretagem)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

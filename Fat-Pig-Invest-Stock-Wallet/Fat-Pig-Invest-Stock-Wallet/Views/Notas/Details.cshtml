@@ -1,0 +1,54 @@
+﻿@model Fat_Pig_Invest_Stock_Wallet.Models.Nota
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Nota</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Corretora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Corretora.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroNota)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeroNota)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataPregao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataPregao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PrecoUnitario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PrecoUnitario)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Emolumentos)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emolumentos)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Corretagem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Corretagem)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
