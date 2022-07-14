@@ -1,0 +1,140 @@
+﻿* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: lightskyblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#home-container {
+    width: 100%;
+    margin: auto auto;
+    padding: 15px 15px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-box {
+    background-color: #223f7f;
+    width: 500px;
+    max-width: 80%;
+    border-radius: 10px;
+    text-align: center;  
+}
+
+#home-logo {
+    max-width: 450px;
+    padding: 15px 15px;
+}
+
+#home-box h3 {
+    color: #223f7f;
+    padding: 15px 15px 0px 15px;
+    font-size: 28px;
+    text-shadow: 1px 1px 2px #1a6aac;
+}
+
+#home-box p {
+    color: darkblue;
+    padding: 15px 15px;
+}
+
+#home-box p, h3 {
+    background-color: lightblue;
+    border: none;
+}
+
+#home-div-button {
+    padding: 30px 15px;
+}
+
+#home-box a {
+    color: darkblue;
+    font-size: 16px;
+    background-color: #ffe4a9;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+#home-box a:hover {
+    background-color: chartreuse;
+}
+
+#home-copyright {
+    text-align: center;
+    padding: 15px 15px;
+    color: #223f7f;    
+}
+
+#home-copyright a {
+    color: #223f7f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#home-copyright a:hover {
+    color: darkgreen;    
+}
+
+
+
+/* Estilos para responsividade */
+@media (max-width: 768px) {
+    body {
+        background-color: #223f7f;
+    }
+
+    #home-container {
+        width: 100%;        
+        padding: 5px 0px;        
+    }
+
+    #home-logo {
+        width: 100%;
+        padding: 5px 5px 25px 5px;
+    }
+
+    #home-box {        
+        width: 100%;        
+    }
+
+    #home-box p, h3 {
+        display: none;
+    }
+
+    #home-box a {
+        font-size: 18px;
+        padding: 20px 10px;           
+    }
+
+    #home-copyright {
+        color: white;
+        padding: 30px 10px;
+        font-size: 12px;
+    }
+
+    #home-copyright a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 350px) {
+    #home-box a {
+        font-size: 12px;
+        padding: 20px 10px;
+    }
+}
