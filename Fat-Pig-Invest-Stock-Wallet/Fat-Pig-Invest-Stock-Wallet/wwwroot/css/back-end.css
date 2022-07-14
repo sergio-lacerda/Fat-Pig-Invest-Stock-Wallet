@@ -83,6 +83,10 @@ h1 {
     padding: 15px 0px;    
 }
 
+h3 {
+    padding: 15px 0px 30px 0px;
+}
+
 
 /*--------------- Specific styles --------------- */
 
@@ -99,4 +103,8 @@ h1 {
 
 .td-botoes-table a:hover {
     color: white;   
+}
+
+.form-botao-cancelar {
+    margin-left: 15px;
 }
