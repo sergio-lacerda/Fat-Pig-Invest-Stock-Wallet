@@ -15,7 +15,8 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
 
         [Display(Name = "CNPJ")]
         [Required(ErrorMessage = "O CNPJ da empresa é obrigatório!")]
+        [StringLength(18, ErrorMessage = "O CNPJ deve conter no máximo 18 dígitos!")]
         [RegularExpression(@"(^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$)", ErrorMessage = "Formato de CNPJ inválido")]
-        public int Cnpj { get; set; }
+        public string Cnpj { get; set; }
     }
 }

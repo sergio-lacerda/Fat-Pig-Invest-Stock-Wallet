@@ -1,5 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿/*--------------- General styles --------------- */
 
 body {
     height: 100vh;
@@ -58,19 +57,17 @@ button.accept-policy {
 }
 
 .footer {
-    /*position: absolute;*/
     margin-top: auto;
     bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: 60px;
+    width: 100%;    
+    line-height: 50px;
     background-color: #14264D;    
 }
 
 .footer-credits {
     text-align: center;
     color: white;
-    font-weight: lighter;
+    font-weight: lighter;    
 }
 
 .footer-credits a {
@@ -80,4 +77,26 @@ button.accept-policy {
 
 .footer-credits a:hover {    
     color: #ffe4a9;
+}
+
+h1 {
+    padding: 15px 0px;    
+}
+
+
+/*--------------- Specific styles --------------- */
+
+.td-botoes-table {
+    text-align: right;
+}
+
+.td-botoes-table a {
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 1em;    
+    font-weight: lighter;    
+}
+
+.td-botoes-table a:hover {
+    color: white;   
 }

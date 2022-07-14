@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<Fat_Pig_Invest_Stock_Wallet.Models.Acao>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Ações";
 }
 
-<h1>Index</h1>
+<h1>Ações</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Adicionar Ação</a>
 </p>
-<table class="table">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th>
@@ -30,10 +30,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Empresa.Nome)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <td class="td-botoes-table">
+                <a class="badge bg-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                <a class="badge bg-success" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                <a class="badge bg-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
             </td>
         </tr>
 }

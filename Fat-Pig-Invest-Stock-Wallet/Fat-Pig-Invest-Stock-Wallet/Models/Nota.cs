@@ -30,7 +30,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
         [Display(Name = "Taxa de liquidação")]
         [Required(ErrorMessage = "O valor da taxa de liquidação é obrigatório!")]
         [Range(0, double.MaxValue, ErrorMessage = "O valor da taxa de liquidação deve ser positivo ou zero!")]
-        public double PrecoUnitario { get; set; }
+        public double TaxaLiquidacao { get; set; }
 
         [Display(Name = "Emolumentos")]
         [Required(ErrorMessage = "O valor dos emolumentos é obrigatório!")]

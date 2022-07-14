@@ -11,14 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fat_Pig_Invest_Stock_Wallet.Migrations
 {
     [DbContext(typeof(FatPigInvestContext))]
-    [Migration("20220713150701_Migracao-inicial")]
+    [Migration("20220714195203_Migracao-inicial")]
     partial class Migracaoinicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "6.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Acao", b =>
@@ -64,8 +64,10 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Cnpj")
-                        .HasColumnType("int");
+                    b.Property<string>("Cnpj")
+                        .IsRequired()
+                        .HasMaxLength(18)
+                        .HasColumnType("varchar(18)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -98,7 +100,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     b.Property<int>("NumeroNota")
                         .HasColumnType("int");
 
-                    b.Property<double>("PrecoUnitario")
+                    b.Property<double>("TaxaLiquidacao")
                         .HasColumnType("double");
 
                     b.HasKey("Id");

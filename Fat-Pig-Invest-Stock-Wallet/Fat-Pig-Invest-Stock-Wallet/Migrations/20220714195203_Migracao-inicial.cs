@@ -36,7 +36,8 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Cnpj = table.Column<int>(type: "int", nullable: false)
+                    Cnpj = table.Column<string>(type: "varchar(18)", maxLength: 18, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -53,7 +54,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     CorretoraId = table.Column<int>(type: "int", nullable: false),
                     NumeroNota = table.Column<int>(type: "int", nullable: false),
                     DataPregao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    PrecoUnitario = table.Column<double>(type: "double", nullable: false),
+                    TaxaLiquidacao = table.Column<double>(type: "double", nullable: false),
                     Emolumentos = table.Column<double>(type: "double", nullable: false),
                     Corretagem = table.Column<double>(type: "double", nullable: false)
                 },
