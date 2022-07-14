@@ -5,34 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Fat Pig Invest Stock Wallet</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Fat_Pig_Invest_Stock_Wallet.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/back-end.css" asp-append-version="true" />    
+    
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid align-items-end">
+                <!--
                 <a class="navbar-brand" asp-area="" asp-controller="Admin" asp-action="Index">Fat Pig Invest Stock Wallet</a>
+                -->
+                <a class="navbar-brand" asp-area="" asp-controller="Admin" asp-action="Index">
+                    <img id="logo" src="~/img/FatPigInvestLogo.png" alt="Fat Pig Invest Logo" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Notas" asp-action="Index">Notas de negociação</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Notas" asp-action="Index">Notas de negociação</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Empresas" asp-action="Index">Empresas</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Empresas" asp-action="Index">Empresas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Corretoras" asp-action="Index">Corretoras</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Corretoras" asp-action="Index">Corretoras</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Acoes" asp-action="Index">Ações</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Acoes" asp-action="Index">Ações</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Sobre" asp-action="Index">Créditos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Sair</a>
                         </li>
 
                         <!--
@@ -52,8 +63,9 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Fat_Pig_Invest_Stock_Wallet - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container footer-credits">
+            &copy; 2022 - Fat Pig Invest Stock Wallet - Developed by 
+            <a href="https://github.com/sergio-lacerda" target="_blank">Sérgio Lacerda</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
