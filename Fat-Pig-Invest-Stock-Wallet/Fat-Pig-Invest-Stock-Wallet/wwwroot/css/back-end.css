@@ -115,3 +115,18 @@ h3 {
 .div-botoes-editar {
     margin-top: 25px;
 }
+
+.country-flag {
+    width: 100px;
+}
+
+.GitHub-Card {
+    width: fit-content;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 7px 15px;
+    border: solid 1px lightslategray;
+    border-radius: 10px;
+    text-decoration: none;
+}

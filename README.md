@@ -1,6 +1,10 @@
 # Fat Pig Invest - Stock Wallet
 
-Waiting for repository description...
+_**[English]**_ This is a self-study solution developed for stock portfolio management for the Brazilian stock market. 
+
+_**[Português]**_ Esta é uma solução de autoestudo desenvolvida para o gerenciamento de carteira de ações para o mercado de ações brasileiro. 
+
+_**[Español]**_ Esta es una solución de autoaprendizaje desarrollada para la gestión de cartera de acciones para la bolsa de valores brasileña.
 
 <br />
 
@@ -57,4 +61,10 @@ Since the solutions was developed using a Code First Approach, the database is c
 "ConnectionStrings": {
         "DatabaseConnStr": "Server=localhost;port=3306;database=dbStockWallet;uid=root;password=''"
     }
+```
+
+- **Program.cs:** At line 11, the database server version is setted as MariaDB 10.4.24, since it's the version used for development. If you are running a diferent version or database, you can edit this line before running the solution. For further information, please refer to the Pomelo project documentation.
+
+```csharp
+var serverVersion = new MariaDbServerVersion(new Version(10, 4, 24));
 ```
