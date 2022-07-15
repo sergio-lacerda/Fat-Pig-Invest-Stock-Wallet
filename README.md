@@ -23,6 +23,7 @@ Waiting for screnshots...
 - Entity Framework
 - Linq
 - Lambda Expressions
+- RegEx: Regular Expressions
 - Pomelo.EntityFrameworkCore.MySql
 - HTML 5
 - CSS 3
