@@ -58,7 +58,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Ticker,EmpresaId")] Acao acao)
-        {
+        {            
             if (ModelState.IsValid)
             {
                 _context.Add(acao);

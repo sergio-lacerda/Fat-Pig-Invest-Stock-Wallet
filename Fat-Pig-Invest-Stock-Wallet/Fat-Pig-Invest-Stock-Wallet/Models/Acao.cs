@@ -16,6 +16,6 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
         [Display(Name = "Empresa")]
         [Required(ErrorMessage = "O nome da empresa é obrigatório!")]
         public int EmpresaId { get; set; }
-        public Empresa Empresa { get; set; }
+        public Empresa? Empresa { get; set; }
     }
 }

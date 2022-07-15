@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fat_Pig_Invest_Stock_Wallet.Migrations
 {
     [DbContext(typeof(FatPigInvestContext))]
-    [Migration("20220714195203_Migracao-inicial")]
-    partial class Migracaoinicial
+    [Migration("20220715144802_Migracao-Inicial")]
+    partial class MigracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

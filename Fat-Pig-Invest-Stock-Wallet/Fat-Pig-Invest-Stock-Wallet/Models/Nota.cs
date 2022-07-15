@@ -12,7 +12,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
         [Display(Name = "Corretora")]
         [Required(ErrorMessage = "O nome da corretora é obrigatório!")]
         public int CorretoraId { get; set; }
-        public Corretora Corretora { get; set; }
+        public Corretora? Corretora { get; set; }
 
         [Display(Name = "Número da nota")]
         [Required(ErrorMessage = "O número da nota é obrigatório!")]
@@ -25,7 +25,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
         public DateTime DataPregao { get; set; }
 
         [Display(Name = "Ordens")]
-        public IEnumerable<Ordem> Ordens { get; set; }
+        public IEnumerable<Ordem>? Ordens { get; set; }
 
         [Display(Name = "Taxa de liquidação")]
         [Required(ErrorMessage = "O valor da taxa de liquidação é obrigatório!")]

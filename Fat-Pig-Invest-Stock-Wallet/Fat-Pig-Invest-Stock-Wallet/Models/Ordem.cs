@@ -18,7 +18,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
         [Display(Name = "Nota de negociação")]
         [Required(ErrorMessage = "O número da nota de negociação é obrigatório!")]
         public int NotaId { get; set; }
-        public Nota Nota { get; set; }
+        public Nota? Nota { get; set; }
 
         [Display(Name = "Data da ordem")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
@@ -33,7 +33,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
         [Display(Name = "Ação")]
         [Required(ErrorMessage = "O código da ação é obrigatório!")]
         public int AcaoId { get; set; }
-        public Acao Acao { get; set; }
+        public Acao? Acao { get; set; }
 
         [Required(ErrorMessage = "A quantidade é obrigatória!")]
         [Range(1, int.MaxValue, ErrorMessage = "A quantidade deve ser um valor positivo!")]
