@@ -3,12 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Fat_Pig_Invest_Stock_Wallet.Models
 {
-    public enum TipoOrdem
-    {
-        Compra = 'C',
-        Venda = 'V'
-    }
-
     [Table("Ordens")]
     public class Ordem
     {
@@ -19,15 +13,9 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
         [Required(ErrorMessage = "O número da nota de negociação é obrigatório!")]
         public int NotaId { get; set; }
         public Nota? Nota { get; set; }
-
-        [Display(Name = "Data da ordem")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        [Required(ErrorMessage = "A data da ordem é obrigatória!")]
-        public DateTime DataHora { get; set; }
-
+        
         [Display(Name = "Tipo")]
-        [Required(ErrorMessage = "O tipo da ordem é obrigatório!")]
-        [EnumDataType(typeof(TipoOrdem))]
+        [Required(ErrorMessage = "O tipo da ordem é obrigatório!")]        
         public char TipoOrdem { get; set; }
 
         [Display(Name = "Ação")]

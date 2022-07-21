@@ -11,14 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fat_Pig_Invest_Stock_Wallet.Migrations
 {
     [DbContext(typeof(FatPigInvestContext))]
-    [Migration("20220715144802_Migracao-Inicial")]
+    [Migration("20220720031845_Migracao-Inicial")]
     partial class MigracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.6")
+                .HasAnnotation("ProductVersion", "6.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Acao", b =>
@@ -118,9 +118,6 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
 
                     b.Property<int>("AcaoId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DataHora")
-                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("NotaId")
                         .HasColumnType("int");

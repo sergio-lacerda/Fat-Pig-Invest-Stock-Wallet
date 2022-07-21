@@ -99,7 +99,6 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     NotaId = table.Column<int>(type: "int", nullable: false),
-                    DataHora = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     TipoOrdem = table.Column<string>(type: "varchar(1)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     AcaoId = table.Column<int>(type: "int", nullable: false),

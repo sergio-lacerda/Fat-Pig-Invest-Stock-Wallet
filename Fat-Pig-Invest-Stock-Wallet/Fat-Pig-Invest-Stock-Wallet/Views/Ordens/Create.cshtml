@@ -1,0 +1,103 @@
+﻿@model Fat_Pig_Invest_Stock_Wallet.Models.Ordem
+
+@{
+    ViewData["Title"] = "Ordens";
+    int notaOrigem = Int32.Parse( ViewData["NotaOrigemId"].ToString() );
+}
+
+<h1>Cadastro de ordens</h1>
+
+<h4>Nota de negociação</h4>
+<hr />
+<div class="row">
+    <dl class="col-md-2">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota.NumeroNota)
+        </dt>
+        <dd>
+            @notaOrigem
+        </dd>
+    </dl>
+    <dl class="col-md-2">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota.DataPregao)
+        </dt>
+        <dd>
+            @ViewData["DataPregao"]
+        </dd>
+    </dl>
+    <dl class="col-md-4">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota.Corretora.Nome)
+        </dt>
+        <dd>
+            @ViewData["Corretora"]
+        </dd>
+    </dl>
+    <dl class="col-md-4">
+        <dt>
+            <label class="control-label"> </label>
+        </dt>
+        <dd style="text-align:right;">
+            <a class="btn btn-secondary form-botao-cancelar" asp-controller="Notas" asp-action="Edit" asp-route-id="@notaOrigem" >Voltar para nota</a>
+            <a class="btn btn-secondary form-botao-cancelar" asp-controller="Notas" asp-action="Index">Lista de notas</a>
+        </dd>
+    </dl>
+</div>
+
+<h4>Ordens</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12"> 
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row col-md-12">
+                <div class="form-group col-md-2">
+                    <label asp-for="TipoOrdem" class="control-label"></label>
+                    <select asp-for="TipoOrdem" class="form-control">
+                        <option value="C" selected="selected">Compra</option>
+                        <option value="V">Venda</option>
+                    </select>
+                    <span asp-validation-for="TipoOrdem" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="AcaoId" class="control-label"></label>
+                    <select asp-for="AcaoId" class ="form-control" asp-items="ViewBag.AcaoId"></select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="Quantidade" class="control-label"></label>
+                    <input asp-for="Quantidade" class="form-control" />
+                    <span asp-validation-for="Quantidade" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label asp-for="PrecoUnitario" class="control-label"></label>
+                    <input asp-for="PrecoUnitario" class="form-control" />
+                    <span asp-validation-for="PrecoUnitario" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label class="control-label"> </label>
+                    <input id="btnAdicionar" type="submit" value="Adicionar" class="btn btn-primary form-control" />
+                </div>
+            </div>
+
+            <!-- Hidden form fields -->
+            <div class="form-group visually-hidden">
+                <label asp-for="NotaId" class="control-label"></label>
+                <input asp-for="NotaId" class ="form-control" value="@notaOrigem" />
+            </div>            
+            <!-- End of hidden form fields -->
+
+        </form>
+    </div>
+</div>
+
+<div id="TabelaOrdens" class="row">
+    @{
+        var ordens = ViewData["Ordens"];
+        await Html.RenderPartialAsync("_TabelaOrdensPartialView", ordens);
+    }    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

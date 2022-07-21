@@ -16,7 +16,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.6")
+                .HasAnnotation("ProductVersion", "6.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Acao", b =>
@@ -116,9 +116,6 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
 
                     b.Property<int>("AcaoId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DataHora")
-                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("NotaId")
                         .HasColumnType("int");
