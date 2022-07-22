@@ -103,7 +103,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     AcaoId = table.Column<int>(type: "int", nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
-                    PrecoUnitario = table.Column<double>(type: "double", nullable: false)
+                    PrecoUnitario = table.Column<decimal>(type: "decimal(65,30)", nullable: false)
                 },
                 constraints: table =>
                 {

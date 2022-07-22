@@ -26,10 +26,12 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
         [Required(ErrorMessage = "A quantidade é obrigatória!")]
         [Range(1, int.MaxValue, ErrorMessage = "A quantidade deve ser um valor positivo!")]
         public int Quantidade { get; set; }
-
+                
         [Display(Name = "Preço unitário")]
+        [DisplayFormat(DataFormatString = "{0:c}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Currency)]
         [Required(ErrorMessage = "O preço unitário é obrigatório!")]
-        [Range(0.01, double.MaxValue, ErrorMessage = "O preço deve ser um valor positivo!")]
-        public double PrecoUnitario { get; set; }
+        [Range(0.01, double.MaxValue, ErrorMessage = "O preço deve ser um valor positivo!")]               
+        public decimal PrecoUnitario { get; set; }
     }
 }

@@ -47,7 +47,8 @@
                 @Html.DisplayFor(modelItem => item.PrecoUnitario)
             </td>
             <td>
-                
+                @{ var total= item.Quantidade * item.PrecoUnitario; }
+                @String.Format("{0:C}", total)
             </td>
             <td class="td-botoes-table">                
                 <a class="badge bg-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>

@@ -120,8 +120,8 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     b.Property<int>("NotaId")
                         .HasColumnType("int");
 
-                    b.Property<double>("PrecoUnitario")
-                        .HasColumnType("double");
+                    b.Property<decimal>("PrecoUnitario")
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fat_Pig_Invest_Stock_Wallet.Migrations
 {
     [DbContext(typeof(FatPigInvestContext))]
-    [Migration("20220720031845_Migracao-Inicial")]
+    [Migration("20220722122356_Migracao-Inicial")]
     partial class MigracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,8 +122,8 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     b.Property<int>("NotaId")
                         .HasColumnType("int");
 
-                    b.Property<double>("PrecoUnitario")
-                        .HasColumnType("double");
+                    b.Property<decimal>("PrecoUnitario")
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");

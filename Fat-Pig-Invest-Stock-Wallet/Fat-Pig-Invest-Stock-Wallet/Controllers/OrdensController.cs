@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Fat_Pig_Invest_Stock_Wallet.Data;
 using Fat_Pig_Invest_Stock_Wallet.Models;
+using System.Globalization;
 
 namespace Fat_Pig_Invest_Stock_Wallet.Controllers
 {
