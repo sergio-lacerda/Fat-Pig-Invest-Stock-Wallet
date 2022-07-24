@@ -141,3 +141,15 @@ h3 {
     border-radius: 10px;
     text-decoration: none;
 }
+
+
+/*--------------- charts styles --------------- */
+
+#piechart_3d {
+    max-width: 38rem;
+    width: 100%;
+}
+
+.card-body {
+    
+}
