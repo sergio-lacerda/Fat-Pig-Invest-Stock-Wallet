@@ -54,9 +54,9 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     CorretoraId = table.Column<int>(type: "int", nullable: false),
                     NumeroNota = table.Column<int>(type: "int", nullable: false),
                     DataPregao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    TaxaLiquidacao = table.Column<double>(type: "double", nullable: false),
-                    Emolumentos = table.Column<double>(type: "double", nullable: false),
-                    Corretagem = table.Column<double>(type: "double", nullable: false)
+                    TaxaLiquidacao = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    Emolumentos = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    Corretagem = table.Column<decimal>(type: "decimal(65,30)", nullable: false)
                 },
                 constraints: table =>
                 {

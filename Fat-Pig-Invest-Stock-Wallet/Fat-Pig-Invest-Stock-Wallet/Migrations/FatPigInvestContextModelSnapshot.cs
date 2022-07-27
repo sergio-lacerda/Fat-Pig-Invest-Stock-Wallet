@@ -83,8 +83,8 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<double>("Corretagem")
-                        .HasColumnType("double");
+                    b.Property<decimal>("Corretagem")
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<int>("CorretoraId")
                         .HasColumnType("int");
@@ -92,14 +92,14 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     b.Property<DateTime>("DataPregao")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<double>("Emolumentos")
-                        .HasColumnType("double");
+                    b.Property<decimal>("Emolumentos")
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<int>("NumeroNota")
                         .HasColumnType("int");
 
-                    b.Property<double>("TaxaLiquidacao")
-                        .HasColumnType("double");
+                    b.Property<decimal>("TaxaLiquidacao")
+                        .HasColumnType("decimal(65,30)");
 
                     b.HasKey("Id");
 
