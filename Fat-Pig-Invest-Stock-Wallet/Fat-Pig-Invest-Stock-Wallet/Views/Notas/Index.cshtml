@@ -2,6 +2,11 @@
 
 @{
     ViewData["Title"] = "Notas de Negociação";
+
+    var totalOperacoes = 0.00M;
+    var despesas = 0.00M;
+    var liquido = 0.00M;
+    var dc = "C";
 }
 
 <h1>Notas de Negociação</h1>
@@ -21,13 +26,13 @@
             <th>
                 @Html.DisplayNameFor(model => model.Corretora)
             </th>   
-            <th>
+            <th style="text-align:right;">
                 Total das operações
             </th>  
-            <th>
+            <th style="text-align:right;">
                 Despesas
             </th> 
-            <th>
+            <th style="text-align:right;">
                 Líquido da nota
             </th> 
             <th>
@@ -48,17 +53,35 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Corretora.Nome)
             </td>    
-            <td>
-                Total das operações
+            <td style="text-align:right;">
+               @{
+                    totalOperacoes = item.Ordens.Sum(o => o.Quantidade * o.PrecoUnitario);
+
+                    var creditos = item.Ordens
+                        .Where(o => o.TipoOrdem == 'V')
+                        .Sum(o => o.Quantidade * o.PrecoUnitario);
+
+                    var debitos = item.Ordens
+                        .Where(o => o.TipoOrdem == 'C')
+                        .Sum(o => o.Quantidade * o.PrecoUnitario);
+
+                    var LiquidoOperacoes = creditos - debitos;                    
+
+                    despesas = item.TaxaLiquidacao + item.Corretagem + item.Emolumentos;
+                    liquido = LiquidoOperacoes - despesas;
+                    dc = (liquido >=0) ? "C" : "D";
+                    
+                }   
+                @String.Format("{0:c}", totalOperacoes)
             </td>  
-            <td>
-                Despesas
+            <td style="text-align:right;">
+                @String.Format("{0:c}", despesas)
+            </td> 
+            <td style="text-align:right;">
+                @String.Format("{0:c}", Math.Abs(liquido))
             </td> 
             <td>
-                Líquido da nota
-            </td> 
-            <td>
-                D/C
+                @dc
             </td> 
             <td class="td-botoes-table">
                 <a class="badge" style="background-color:chocolate" asp-controller="Ordens" asp-action="CreateOrder" asp-route-id="@item.Id">Ordens</a>

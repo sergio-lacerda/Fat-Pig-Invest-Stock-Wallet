@@ -22,7 +22,10 @@ namespace Fat_Pig_Invest_Stock_Wallet.Controllers
         // GET: Notas
         public async Task<IActionResult> Index()
         {
-            var fatPigInvestContext = _context.Notas.Include(n => n.Corretora);
+            var fatPigInvestContext = _context.Notas
+                .Include(n => n.Corretora)
+                .Include(o => o.Ordens);
+            
             return View(await fatPigInvestContext.ToListAsync());
         }
 
