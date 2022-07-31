@@ -57,7 +57,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CorretoraId,NumeroNota,DataPregao,PrecoUnitario,Emolumentos,Corretagem")] Nota nota)
+        public async Task<IActionResult> Create([Bind("Id,CorretoraId,NumeroNota,DataPregao,PrecoUnitario,TaxaLiquidacao,Emolumentos,Corretagem")] Nota nota)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CorretoraId,NumeroNota,DataPregao,PrecoUnitario,Emolumentos,Corretagem")] Nota nota)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CorretoraId,NumeroNota,DataPregao,PrecoUnitario,TaxaLiquidacao,Emolumentos,Corretagem")] Nota nota)
         {
             if (id != nota.Id)
             {
