@@ -18,7 +18,14 @@ function drawPizzaChart() {
     }
     var data = google.visualization.arrayToDataTable(pizzaAuxData);    
 
-    var chartwidth = $('#piechart_3d').width()-20;
+    var chartwidth = $('#piechart_3d').width() - 20;
+
+    var formatter = new google.visualization.NumberFormat({
+        decimalSymbol: ',',
+        groupingSymbol: '.',
+        prefix: 'R$ '
+    });
+    formatter.format(data, 1);
 
     var options = {
         legend: { position: 'labeled' },        
