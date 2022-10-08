@@ -27,11 +27,12 @@ namespace Fat_Pig_Invest_Stock_Wallet.Controllers
             return Json(carteira.Where(ct => ct.Quantidade>0).ToList());
         }
 
-        /* Data for stocks table */
-        public async Task<JsonResult> pvPosicaoAcionaria()
+        /* Partial view for stocks table */
+        public async Task<PartialViewResult> pvPosicaoAcionaria()
         {
             var carteira = await _carteiraModel.carteira();
-            return Json(carteira.Where(ct => ct.Quantidade > 0).ToList());
+            var dados = carteira.Where(ct => ct.Quantidade > 0).ToList();
+            return PartialView("_PosicaoAcionariaPartialView", dados);
         }
 
         /* Data for stock wallet evolution */

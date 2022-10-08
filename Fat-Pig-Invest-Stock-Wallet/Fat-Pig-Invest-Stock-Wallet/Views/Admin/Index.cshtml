@@ -19,7 +19,9 @@
     <div class="card bg-light mb-3" style="max-width: 40.625rem; padding:0px;">
         <div class="card-header">Evolução patrimonial</div>
         <div class="card-body">            
-            @{ await Html.RenderPartialAsync("_EvolucaoPatrimonialPartialView"); }
+            @{
+                await Html.RenderPartialAsync("_EvolucaoPatrimonialPartialView");
+            }
         </div>
     </div>
 </div>
@@ -27,8 +29,8 @@
 <div class="row justify-content-md-between flex-md-row flex-sm-column">
     <div class="card bg-light mb-3" style="max-width: 40.625rem; padding:0px;">
         <div class="card-header">Posição acionária</div>
-        <div class="card-body">            
-            <p class="card-text">Sem dados para exibir.</p>
+        <div id="divPvPosicaoAcionaria" class="card-body">            
+            @{ await Html.RenderPartialAsync("_PosicaoAcionariaPartialView"); }
         </div>
     </div>
 
@@ -41,9 +43,9 @@
 </div>
 
 
-
 @section Scripts {    
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="~/js/grafico-pizza.js"></script>
     <script type="text/javascript" src="~/js/grafico-evolucao.js"></script>
+    <script type="text/javascript" src="~/js/posicao-acionaria.js"></script>
 }

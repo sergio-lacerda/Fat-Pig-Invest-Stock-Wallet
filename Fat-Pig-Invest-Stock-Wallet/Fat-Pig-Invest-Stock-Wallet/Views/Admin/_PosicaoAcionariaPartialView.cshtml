@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Fat_Pig_Invest_Stock_Wallet.Models.Carteira>
+
+@{
+    IEnumerable<Carteira> auxModel = new List<Carteira>();
+    if (Model != null)
+        auxModel = Model;
+}
+
+<div id="posicao-acionaria">
+    <table class="table">
+      <thead>
+        <tr>          
+          <th scope="col">Ação</th>
+          <th scope="col" style="text-align:right">Quantidade</th>
+          <th scope="col" style="text-align:right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var item in auxModel) {
+            <tr>          
+              <td>@item.Acao</td>
+              <td style="text-align:right">@item.Quantidade</td>
+              <td style="text-align:right">@String.Format("{0:c}", item.Total)</td>
+            </tr>
+        }        
+      </tbody>
+    </table>
+</div>
