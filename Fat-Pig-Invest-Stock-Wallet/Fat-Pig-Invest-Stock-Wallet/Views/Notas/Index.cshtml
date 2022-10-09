@@ -22,10 +22,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NumeroNota)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Corretora)
-            </th>   
+            </th>            
             <th style="text-align:right;">
                 Total das operações
             </th>  
@@ -49,10 +46,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NumeroNota)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Corretora.Nome)
-            </td>    
+            </td>               
             <td style="text-align:right;">
                @{
                     totalOperacoes = item.Ordens.Sum(o => o.Quantidade * o.PrecoUnitario);
