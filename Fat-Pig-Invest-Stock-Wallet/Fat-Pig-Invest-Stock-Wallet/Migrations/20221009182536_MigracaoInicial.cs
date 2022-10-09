@@ -168,6 +168,29 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.InsertData(
+                table: "Corretoras",
+                columns: new[] { "Id", "Nome" },
+                values: new object[,]
+                {
+                    { 1, "FATPIG INVEST DVTM LTDA" },
+                    { 2, "NU INVEST CORRETORA DE VALORES S.A" },
+                    { 3, "XP INVESTIMENTOS CCTVM S/A" },
+                    { 4, "MODAL DTVM LTDA" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Empresas",
+                columns: new[] { "Id", "Cnpj", "Nome" },
+                values: new object[,]
+                {
+                    { 1, "61.532.644/0001-15", "ITAUSA" },
+                    { 2, "33.000.167/0001-01", "PETROBRAS" },
+                    { 3, "76.535.764/0001-43", "OI SA" },
+                    { 4, "90.400.888/0001-42", "SANTANDER BR" },
+                    { 5, "07.859.971/0001-30", "TAESA" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "TiposProvento",
                 columns: new[] { "Id", "Nome" },
                 values: new object[,]
@@ -176,6 +199,20 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     { 2, "Juros sobre Capital Próprio (JCP)" },
                     { 3, "Rendimentos FIIs" },
                     { 4, "Outros" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Acoes",
+                columns: new[] { "Id", "EmpresaId", "Ticker" },
+                values: new object[,]
+                {
+                    { 1, 1, "ITSA3" },
+                    { 2, 1, "ITSA4" },
+                    { 3, 2, "PETR3" },
+                    { 4, 2, "PETR4" },
+                    { 5, 3, "OIBR3" },
+                    { 6, 4, "SANB11" },
+                    { 7, 5, "TAEE11" }
                 });
 
             migrationBuilder.CreateIndex(

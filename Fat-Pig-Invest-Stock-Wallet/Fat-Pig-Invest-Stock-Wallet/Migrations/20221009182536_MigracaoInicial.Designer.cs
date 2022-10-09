@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fat_Pig_Invest_Stock_Wallet.Migrations
 {
     [DbContext(typeof(FatPigInvestContext))]
-    [Migration("20221009135810_MigracaoInicial")]
+    [Migration("20221009182536_MigracaoInicial")]
     partial class MigracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,6 +40,50 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     b.HasIndex("EmpresaId");
 
                     b.ToTable("Acoes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            EmpresaId = 1,
+                            Ticker = "ITSA3"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            EmpresaId = 1,
+                            Ticker = "ITSA4"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            EmpresaId = 2,
+                            Ticker = "PETR3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            EmpresaId = 2,
+                            Ticker = "PETR4"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            EmpresaId = 3,
+                            Ticker = "OIBR3"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            EmpresaId = 4,
+                            Ticker = "SANB11"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            EmpresaId = 5,
+                            Ticker = "TAEE11"
+                        });
                 });
 
             modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Corretora", b =>
@@ -56,6 +100,28 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Corretoras");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nome = "FATPIG INVEST DVTM LTDA"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Nome = "NU INVEST CORRETORA DE VALORES S.A"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Nome = "XP INVESTIMENTOS CCTVM S/A"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Nome = "MODAL DTVM LTDA"
+                        });
                 });
 
             modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Empresa", b =>
@@ -77,6 +143,38 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Empresas");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Cnpj = "61.532.644/0001-15",
+                            Nome = "ITAUSA"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Cnpj = "33.000.167/0001-01",
+                            Nome = "PETROBRAS"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Cnpj = "76.535.764/0001-43",
+                            Nome = "OI SA"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Cnpj = "90.400.888/0001-42",
+                            Nome = "SANTANDER BR"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Cnpj = "07.859.971/0001-30",
+                            Nome = "TAESA"
+                        });
                 });
 
             modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Nota", b =>
