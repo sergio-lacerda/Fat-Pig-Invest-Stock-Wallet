@@ -11,7 +11,11 @@ _**[Español]**_ Esta es una solución de autoaprendizaje desarrollada para la g
 ## Screenshots 
 <br />
 
-Waiting for screnshots...
+![Fat Pig Invest - Stock Wallet Main Page](https://github.com/sergio-lacerda/Fat-Pig-Invest-Stock-Wallet/blob/master/Preview/Index.png "Fat Pig Invest - Stock Wallet Main Page")
+
+![Fat Pig Invest - Stock Wallet Orders](https://github.com/sergio-lacerda/Fat-Pig-Invest-Stock-Wallet/blob/master/Preview/NotasDeNegociacao.png "Fat Pig Invest - Stock Wallet Orders")
+
+![Fat Pig Invest - Stock Wallet Earnings](https://github.com/sergio-lacerda/Fat-Pig-Invest-Stock-Wallet/blob/master/Preview/Proventos.png "Fat Pig Invest - Stock Wallet Earnings")
 
 <br />
 
@@ -29,7 +33,7 @@ Waiting for screnshots...
 - CSS 3
 - Bootstrap
 - Javascript / JQuery
-- MySQL Database
+- MySQL / MariaDB Database
 - MySQL Connector
 - Google Charts
 
@@ -51,7 +55,7 @@ git clone https://github.com/sergio-lacerda/Fat-Pig-Invest-Stock-Wallet.git
 
 For this project, a MySQL Database Server is required. If you don't have it, you can use a XAMPP distribution containing MariaDB.
 
-Since the solutions was developed using a Code First Approach, the database is created by the solution itself and there's no need to execute any scripts.
+Since the solutions was developed by using a Code First Approach, the database is created by the Migrations commands and there's no need to execute any external database scripts.
 
    
 ### 3. Settings
@@ -68,4 +72,16 @@ Since the solutions was developed using a Code First Approach, the database is c
 
 ```csharp
 var serverVersion = new MariaDbServerVersion(new Version(10, 4, 24));
+```
+
+
+### 4. Migrations
+
+Run the Migrations commands bellow in order to create the database based on the project classes (It´s recommended to delete the "Migrations" Folder before running these commands).
+
+```console
+add-migration FirstMigration
+```
+```console
+Update-database
 ```
