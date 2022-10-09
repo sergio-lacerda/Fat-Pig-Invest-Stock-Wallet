@@ -1,11 +1,11 @@
-﻿google.charts.load('current', { 'packages': ['bar'] });
+﻿google.charts.load("current", { packages: ['corechart'] });
 google.charts.setOnLoadCallback(updateBarChart);
 
 var barChartData;
 var barAuxData;
 
 function drawBarChart() {
-    barAuxData = [['Data', 'Acumulado']];
+    barAuxData = [['Data', 'Acumulado', { role: 'annotation' }]];
 
     let dados = JSON.parse(barChartData);
     let acumulado = 0;
@@ -14,24 +14,36 @@ function drawBarChart() {
         acumulado += (dados[reg].compras - dados[reg].vendas)        
         let temp = [
             new Date(dados[reg].dataPregao).toLocaleDateString(),            
-            acumulado
+            acumulado,
+            'R$ ' + acumulado.toLocaleString('pt-br', { minimumFractionDigits: 2 })
         ];
         barAuxData.push(temp);
     }
+    // Showing last 5 values in the chart
+    if (barAuxData.length > 6)
+        barAuxData.splice(1, barAuxData.length - 6);
+
     let data = new google.visualization.arrayToDataTable(barAuxData);
 
     var chartwidth = $('#evolucao-chart').width() - 20;
 
+    var formatter = new google.visualization.NumberFormat({
+        decimalSymbol: ',',
+        groupingSymbol: '.',
+        prefix: 'R$ '
+    });
+    formatter.format(data, 1);
+
     var options = {
         width: chartwidth,
         height: chartwidth / 2,
-        legend: { position: 'none' },        
-        bar: { groupWidth: "90%" }        
+        legend: { position: 'bottom' },        
+        bar: { groupWidth: "90%" },
+        chartArea: { width: chartwidth, left: 0, top: 0, height: (chartwidth / 2)-50 }
     };
-
-    var chart = new google.charts.Bar(document.getElementById('evolucao-chart'));
-    // Convert the Classic options to Material options.
-    chart.draw(data, google.charts.Bar.convertOptions(options));
+       
+    var chart = new google.visualization.ColumnChart(document.getElementById("evolucao-chart"));
+    chart.draw(data, options);
 };
 
 function updateBarChart() {
