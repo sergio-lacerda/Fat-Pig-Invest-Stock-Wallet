@@ -58,9 +58,17 @@ namespace Fat_Pig_Invest_Stock_Wallet.Controllers
         }
 
         /* Data for stock earnings */
-        public async Task<PartialViewResult> pvProventos()
+        public async Task<JsonResult> pvProventos()
         {
-            return null;
+            var proventos = from p in _context.Proventos
+                            group p by p.TipoProvento.Nome into Dados
+                            select new ProventoResumo
+                            {
+                                TipoProvento = Dados.First().TipoProvento.Nome,
+                                Total = Dados.Sum(valor => valor.ValorProvento)
+                            };
+
+            return Json(proventos.ToList());
         }
 
 

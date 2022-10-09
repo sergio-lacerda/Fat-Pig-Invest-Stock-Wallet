@@ -32,7 +32,7 @@ function drawPizzaChart() {
         width: chartwidth,
         height: chartwidth / 2,        
         chartArea: { width: chartwidth, left: 0, top: 0, height: chartwidth/2 },
-        is3D: true,
+        is3D: true
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
