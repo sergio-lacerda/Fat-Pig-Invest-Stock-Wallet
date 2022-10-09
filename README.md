@@ -30,7 +30,7 @@ _**[Español]**_ Esta es una solución de autoaprendizaje desarrollada para la g
 - RegEx: Regular Expressions
 - Pomelo.EntityFrameworkCore.MySql
 - HTML 5
-- CSS 3
+- CSS 3 (not fully responsive sample)
 - Bootstrap
 - Javascript / JQuery
 - MySQL / MariaDB Database
