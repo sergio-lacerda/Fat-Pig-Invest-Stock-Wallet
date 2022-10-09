@@ -11,6 +11,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Models
             _context = context;
         }
 
+        /* Getting orders' ammounts and values for tickers */
         public async Task<IEnumerable<Carteira>> carteira()
         {
             var ordens = from o in _context.Ordens

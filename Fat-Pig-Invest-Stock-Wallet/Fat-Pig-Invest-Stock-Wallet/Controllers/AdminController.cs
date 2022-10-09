@@ -36,9 +36,25 @@ namespace Fat_Pig_Invest_Stock_Wallet.Controllers
         }
 
         /* Data for stock wallet evolution */
-        public async Task<PartialViewResult> pvEvolucaoPatrimonial()
+        public async Task<JsonResult> pvEvolucaoPatrimonial()
         {
-            return null;
+            var ordens = from o in _context.Ordens
+                         group o by o.Nota.DataPregao into Dados
+                         select new NotaResumo
+                         {
+                             DataPregao = Dados.First().Nota.DataPregao,
+                             Vendas = Dados.Sum(valor => 
+                                valor.TipoOrdem=='V' ?
+                                valor.Quantidade * valor.PrecoUnitario :
+                                0                             
+                             ),
+                             Compras = Dados.Sum(valor =>
+                                valor.TipoOrdem == 'C' ?
+                                valor.Quantidade * valor.PrecoUnitario :
+                                0
+                             )
+                         };
+            return Json(ordens.ToList());
         }
 
         /* Data for stock earnings */
