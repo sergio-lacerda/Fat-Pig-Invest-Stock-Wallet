@@ -46,6 +46,21 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "TiposProvento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TiposProvento", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Notas",
                 columns: table => new
                 {
@@ -123,6 +138,46 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.CreateTable(
+                name: "Proventos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    TipoProventoId = table.Column<int>(type: "int", nullable: false),
+                    AcaoId = table.Column<int>(type: "int", nullable: false),
+                    DataProvento = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    ValorProvento = table.Column<decimal>(type: "decimal(65,30)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Proventos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Proventos_Acoes_AcaoId",
+                        column: x => x.AcaoId,
+                        principalTable: "Acoes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Proventos_TiposProvento_TipoProventoId",
+                        column: x => x.TipoProventoId,
+                        principalTable: "TiposProvento",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "TiposProvento",
+                columns: new[] { "Id", "Nome" },
+                values: new object[,]
+                {
+                    { 1, "Dividendos" },
+                    { 2, "Juros sobre Capital Próprio (JCP)" },
+                    { 3, "Rendimentos FIIs" },
+                    { 4, "Outros" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Acoes_EmpresaId",
                 table: "Acoes",
@@ -142,6 +197,16 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                 name: "IX_Ordens_NotaId",
                 table: "Ordens",
                 column: "NotaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Proventos_AcaoId",
+                table: "Proventos",
+                column: "AcaoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Proventos_TipoProventoId",
+                table: "Proventos",
+                column: "TipoProventoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -150,16 +215,22 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                 name: "Ordens");
 
             migrationBuilder.DropTable(
-                name: "Acoes");
+                name: "Proventos");
 
             migrationBuilder.DropTable(
                 name: "Notas");
 
             migrationBuilder.DropTable(
-                name: "Empresas");
+                name: "Acoes");
+
+            migrationBuilder.DropTable(
+                name: "TiposProvento");
 
             migrationBuilder.DropTable(
                 name: "Corretoras");
+
+            migrationBuilder.DropTable(
+                name: "Empresas");
         }
     }
 }

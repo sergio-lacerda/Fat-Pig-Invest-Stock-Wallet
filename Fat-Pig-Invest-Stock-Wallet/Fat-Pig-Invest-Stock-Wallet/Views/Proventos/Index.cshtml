@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Fat_Pig_Invest_Stock_Wallet.Models.Provento>
+
+@{
+    ViewData["Title"] = "Proventos";
+}
+
+<h1>Proventos</h1>
+
+<p>    
+    <a class="btn btn-primary" asp-action="Create">Adicionar Provento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoProvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataProvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Acao)
+            </th>
+            <th style="text-align:right">
+                @Html.DisplayNameFor(model => model.ValorProvento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoProvento.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataProvento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Acao.Ticker)
+            </td>
+            <td style="text-align:right">
+                @Html.DisplayFor(modelItem => item.ValorProvento)
+            </td>
+            <td class="td-botoes-table">
+                <a class="badge bg-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                <a class="badge bg-success" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                <a class="badge bg-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -23,6 +23,10 @@ function drawBarChart() {
     if (barAuxData.length > 6)
         barAuxData.splice(1, barAuxData.length - 6);
 
+    // Setting zero when no values are provided
+    if (barAuxData.length < 2)
+        barAuxData.push([new Date(Date.now()).toLocaleDateString(), 0, 'R$ 0,00']);
+
     let data = new google.visualization.arrayToDataTable(barAuxData);
 
     var chartwidth = $('#evolucao-chart').width() - 20;

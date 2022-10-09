@@ -16,7 +16,7 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "6.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Acao", b =>
@@ -139,6 +139,71 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     b.ToTable("Ordens");
                 });
 
+            modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Provento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("AcaoId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataProvento")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("TipoProventoId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ValorProvento")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AcaoId");
+
+                    b.HasIndex("TipoProventoId");
+
+                    b.ToTable("Proventos");
+                });
+
+            modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.TipoProvento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TiposProvento");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nome = "Dividendos"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Nome = "Juros sobre Capital Próprio (JCP)"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Nome = "Rendimentos FIIs"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Nome = "Outros"
+                        });
+                });
+
             modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Acao", b =>
                 {
                     b.HasOne("Fat_Pig_Invest_Stock_Wallet.Models.Empresa", "Empresa")
@@ -178,6 +243,25 @@ namespace Fat_Pig_Invest_Stock_Wallet.Migrations
                     b.Navigation("Acao");
 
                     b.Navigation("Nota");
+                });
+
+            modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Provento", b =>
+                {
+                    b.HasOne("Fat_Pig_Invest_Stock_Wallet.Models.Acao", "Acao")
+                        .WithMany()
+                        .HasForeignKey("AcaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Fat_Pig_Invest_Stock_Wallet.Models.TipoProvento", "TipoProvento")
+                        .WithMany()
+                        .HasForeignKey("TipoProventoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Acao");
+
+                    b.Navigation("TipoProvento");
                 });
 
             modelBuilder.Entity("Fat_Pig_Invest_Stock_Wallet.Models.Nota", b =>

@@ -1,0 +1,47 @@
+﻿@model Fat_Pig_Invest_Stock_Wallet.Models.Provento
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<h4>Provento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TipoProventoId" class="control-label"></label>
+                <select asp-for="TipoProventoId" class="form-control" asp-items="ViewBag.TipoProventoId"></select>
+                <span asp-validation-for="TipoProventoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataProvento" class="control-label"></label>
+                <input asp-for="DataProvento" class="form-control" type="date" />
+                <span asp-validation-for="DataProvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcaoId" class="control-label"></label>
+                <select asp-for="AcaoId" class="form-control" asp-items="ViewBag.AcaoId"></select>
+                <span asp-validation-for="AcaoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorProvento" class="control-label"></label>
+                <input asp-for="ValorProvento" class="form-control" />
+                <span asp-validation-for="ValorProvento" class="text-danger"></span>
+            </div>
+            <div class="form-group div-botoes-editar">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a class="btn btn-secondary form-botao-cancelar" asp-action="Index">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
