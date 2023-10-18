@@ -1,3 +1,5 @@
+![Fat Pig Invest - Stock Wallet Logo](https://github.com/sergio-lacerda/Fat-Pig-Invest-Stock-Wallet/blob/master/Preview/logo.png "Fat Pig Invest - Stock Wallet Logo")
+
 # Fat Pig Invest - Stock Wallet
 
 _**[English]**_ This is a self-study solution developed for stock portfolio management for the Brazilian stock market. 
