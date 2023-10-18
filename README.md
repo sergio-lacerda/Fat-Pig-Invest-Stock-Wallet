@@ -2,11 +2,11 @@
 
 # Fat Pig Invest - Stock Wallet
 
-_**[English]**_ This is a self-study solution developed for stock portfolio management for the Brazilian stock market. 
+<img height="12px" src="https://github.com/hampusborgos/country-flags/blob/main/png250px/us.png"/> This is a self-study solution developed for stock portfolio management for the Brazilian stock market. 
 
-_**[Português]**_ Esta é uma solução de autoestudo desenvolvida para o gerenciamento de carteira de ações para o mercado de ações brasileiro. 
+<img height="12px" src="https://github.com/hampusborgos/country-flags/blob/main/png250px/br.png"/> Esta é uma solução de autoestudo desenvolvida para o gerenciamento de carteira de ações para o mercado de ações brasileiro. 
 
-_**[Español]**_ Esta es una solución de autoaprendizaje desarrollada para la gestión de cartera de acciones para la bolsa de valores brasileña.
+<img height="12px" src="https://github.com/hampusborgos/country-flags/blob/main/png250px/es.png"/> Esta es una solución de autoaprendizaje desarrollada para la gestión de cartera de acciones para la bolsa de valores brasileña.
 
 <br />
 
