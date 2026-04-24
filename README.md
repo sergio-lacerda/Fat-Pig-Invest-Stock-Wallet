@@ -8,11 +8,11 @@ A self-study project designed to manage stock portfolios focused on the Brazilia
 
 ### 🌎 About the Project
 
-<img height="12px" src="https://github.com/hampusborgos/country-flags/blob/main/png250px/us.png"/> This is a self-study solution developed for stock portfolio management, focused on the Brazilian stock market. 
+<img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/us.svg" width="20" style="display: inline; vertical-align: middle;" /> This is a self-study solution developed for stock portfolio management, focused on the Brazilian stock market. 
 
-<img height="12px" src="https://github.com/hampusborgos/country-flags/blob/main/png250px/br.png"/>Esta é uma solução de autoestudo desenvolvida para o gerenciamento de carteira de ações voltada ao mercado brasileiro. 
+<img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/br.svg" width="20" style="display: inline; vertical-align: middle;" /> Esta é uma solução de autoestudo desenvolvida para o gerenciamento de carteira de ações voltada ao mercado brasileiro. 
 
-<img height="12px" src="https://github.com/hampusborgos/country-flags/blob/main/png250px/es.png"/> Esta es una solución de autoaprendizaje desarrollada para la gestión de carteras de acciones enfocada en el mercado brasileño.
+<img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/es.svg" width="20" style="display: inline; vertical-align: middle;" /> Esta es una solución de autoaprendizaje desarrollada para la gestión de carteras de acciones enfocada en el mercado brasileño.
 
 ---
 
