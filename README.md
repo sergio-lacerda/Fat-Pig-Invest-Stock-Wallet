@@ -18,10 +18,11 @@ A self-study project designed to manage stock portfolios focused on the Brazilia
 
 ## 📸 Screenshots
 
+### Main Page
 ![Main Page](https://github.com/sergio-lacerda/Fat-Pig-Invest-Stock-Wallet/blob/master/Preview/Index.png "Main Page")
-
+### Orders
 ![Orders](https://github.com/sergio-lacerda/Fat-Pig-Invest-Stock-Wallet/blob/master/Preview/NotasDeNegociacao.png "Orders")
-
+### Earnings
 ![Earnings](https://github.com/sergio-lacerda/Fat-Pig-Invest-Stock-Wallet/blob/master/Preview/Proventos.png "Earnings")
 
 ---
